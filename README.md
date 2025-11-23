@@ -1,4 +1,4 @@
-# 🌐 IntelliSync — AI-Powered Document Intelligence  
+# 🌐 IntelliSync — AI-Powered RAG Document Intelligence  
 Futuristic Minimal • RAG • PDF Chat • Notes • 3D Experience
 
 IntelliSync is an AI-powered system that allows users to upload PDFs, index their content into a vector database, and chat with the documents using Retrieval-Augmented Generation (RAG).  
