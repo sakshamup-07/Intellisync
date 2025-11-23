@@ -79,6 +79,7 @@ npm install
 npm run dev
 http://localhost:5000
 
+//Env variables
 
 MONGO_URI=your_mongo_connection
 PINECONE_API_KEY=your_key
