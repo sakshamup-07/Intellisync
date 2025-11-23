@@ -190,7 +190,7 @@ export default function PdfUpload() {
 
       {/* 3D Planet fixed at bottom (non-interactive) */}
       <div
-        className="pointer-events-none fixed bottom-0 left-1/2 -translate-x-1/2 z-0 opacity-60"
+        className="pointer-events-none fixed bottom-16 left-1/2 -translate-x-1/2 z-0 opacity-60"
         style={{ width: 560, height: 420 }}
       >
         <PlanetCanvas />
