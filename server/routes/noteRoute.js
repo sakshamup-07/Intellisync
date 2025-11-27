@@ -1,25 +1,39 @@
 import express from "express";
-import Note from "../models/noteModel.js";
+import Note from "../models/Note.js";
 
 const router = express.Router();
 
 // GET all notes
 router.get("/", async (req, res) => {
-  const notes = await Note.find();
-  res.json(notes);
+  try {
+    const notes = await Note.find().lean();
+    return res.json(notes);
+  } catch (err) {
+    return res.status(500).json({ error: "Failed to fetch notes" });
+  }
 });
 
-// POST create note
+// CREATE note
 router.post("/", async (req, res) => {
-  const { title, content } = req.body;
-  const newNote = await Note.create({ title, content });
-  res.json(newNote);
+  try {
+    const { title, content } = req.body;
+    const note = await Note.create({ title, text: content });
+return res.json({
+  success: true,
+  note,
+});  } catch (err) {
+    return res.status(500).json({ error: "Failed to create note" });
+  }
 });
 
 // DELETE note
 router.delete("/:id", async (req, res) => {
-  await Note.findByIdAndDelete(req.params.id);
-  res.json({ message: "Deleted" });
+  try {
+    await Note.findByIdAndDelete(req.params.id);
+    return res.json({ success: true });
+  } catch (err) {
+    return res.status(500).json({ error: "Failed to delete note" });
+  }
 });
 
 export default router;
