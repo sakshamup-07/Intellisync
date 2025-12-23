@@ -30,7 +30,7 @@ export default function PdfUpload() {
       const formData = new FormData();
       formData.append("file", file); // matches multer single("file") on server
 
-      const res = await api.post("/upload", formData, {
+ const res = await api.post("/api/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
