@@ -2,7 +2,7 @@
 import api from "./api.js"; // axios baseURL -> http://localhost:5000/api
 
 export async function indexNote(noteId) {
-  const res = await api.post(`/rag/index/${noteId}`);
+  const res = await api.post(`/api/rag/index/${noteId}`);
   return res.data;
 }
 
